@@ -37,7 +37,25 @@ namespace ProjetoModulo04
             //tipo caracter colocar tipo aspas simples
             char var3 = 'b';
             //tipo palavras colocar aspas duplas
+            // String é alias (apelido) de string
             string var4 = "teste";
+
+            //consegue guardar numeros maiores 32 bits (2 bilhoes ou 4 se nao utilizar o negativo
+            // int é alias (apelido) do int32
+            Int32 soma4 = 23;
+
+            //numeros curtos vai de 32767 de positivo a negativo
+            // short é alias (apelido) do int16
+            short soma5 = 5;
+
+            Int16 soma6 = 6;
+
+            // variaveis do tipo booleana que escolhe entre duas opções verdadeiro ou falso
+            // custuma chamar esse tipo de flag´s, utiliza em estruturas de repetição ou seleção
+            //para testar ou guardar uma condicional
+            bool flag = true;
+        
+
         }
     }
 }

@@ -52,10 +52,47 @@ namespace ProjetoModulo04
 
             // variaveis do tipo booleana que escolhe entre duas opções verdadeiro ou falso
             // custuma chamar esse tipo de flag´s, utiliza em estruturas de repetição ou seleção
-            //para testar ou guardar uma condicional
+            //para testar ou guardar uma condicional    
             bool flag = true;
-        
 
+            // OPERADORES ARITMETICOS
+
+
+            /*      + ==> SOMA
+             *      - ==> SUBTRAÇÃO
+             *      / ==> DIVISÃO
+             *      * ==> MULTIPLICAÇÃO
+            */
+
+
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // realizar a as contas de tipo inteiros
+
+            int numero3, numero4;
+            // testa o resultado se o campo for vazio e pode apresentar o erro
+            Boolean result1 = textBox1.Text.Trim().Equals(string.Empty);
+            Boolean result2 = textBox2.Text.Trim().Equals(string.Empty);
+
+            // realiza a verificação dos textbox para ver se nao está vazio o campo
+            if (result1 == true || result2 == true)
+            {
+                MessageBox.Show("Insira todos os valores", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+            //realizar a leitura do text box convertendo em numero e retirando os espaços
+            numero3 = Convert.ToInt32(textBox1.Text.Trim());
+            numero4 = Convert.ToInt32(textBox2.Text.Trim());
+
+            label1.Text = (numero3 + numero4).ToString();
+            label2.Text = (numero3 - numero4).ToString();
+            label3.Text = (numero3 / numero4).ToString();
+            label4.Text = (numero3 * numero4).ToString();
         }
     }
 }

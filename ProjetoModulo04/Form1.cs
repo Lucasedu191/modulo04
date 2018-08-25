@@ -73,7 +73,7 @@ namespace ProjetoModulo04
         {
             // realizar a as contas de tipo inteiros
 
-            int numero3, numero4;
+            int numero3, numero4, numero5;
             // testa o resultado se o campo for vazio e pode apresentar o erro
             Boolean result1 = textBox1.Text.Trim().Equals(string.Empty);
             Boolean result2 = textBox2.Text.Trim().Equals(string.Empty);
@@ -88,11 +88,127 @@ namespace ProjetoModulo04
             //realizar a leitura do text box convertendo em numero e retirando os espaços
             numero3 = Convert.ToInt32(textBox1.Text.Trim());
             numero4 = Convert.ToInt32(textBox2.Text.Trim());
+            //outra forma de realizar a converção de string para inteiro
+            numero5 = int.Parse(textBox1.Text.Trim());
+            //acessando os label´s e fazendo os calculos
+
 
             label1.Text = (numero3 + numero4).ToString();
             label2.Text = (numero3 - numero4).ToString();
             label3.Text = (numero3 / numero4).ToString();
             label4.Text = (numero3 * numero4).ToString();
+
+            if (numero3 == numero4)
+                /*
+                 *          > ==> MAIOR
+                 *          < ==> MENOR    
+                 *          == ==> IGUAL
+                 *          >= ==> MAIOR OU IGUAL
+                 *          <= ==> MENOR OU IGUAL
+                 *          
+                 */     
+            {
+                MessageBox.Show("Valores iguais", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else if ( numero3 > numero4)
+            {
+                MessageBox.Show("Primeiro valor é maior", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else if (numero3 < numero4) 
+            {
+                MessageBox.Show("Segundo valor é maior", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //exemplo com operador OU
+            if (txtsenha.Text.Trim().Equals(string.Empty) || txtsenha.Text.Trim().Length <= 3)
+            {
+                MessageBox.Show("Senha Inválida");
+            }
+            //exemplo com operador E
+            if (txtsenha.Text.Trim().Length>3 && !txtsenha.Text.Trim().Equals("admin"))
+            {
+                MessageBox.Show("Senha Inválida");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if( txtDiaSemana.Text.Trim().Equals(string.Empty))
+            {
+                MessageBox.Show("Informe o dia da semana", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // quando são varias opções é utilizado o switch case 
+            int iDia = Convert.ToInt32(txtDiaSemana.Text.Trim());
+            switch (iDia)
+            {
+                case 1:
+                    MessageBox.Show("Domingo");
+                    break;
+
+                case 2:
+                    MessageBox.Show("Segunda");
+                    break;
+
+                case 3:
+                    MessageBox.Show("Terça");
+                    break;
+
+                case 4:
+                    MessageBox.Show("Quarta");
+                    break;
+
+                case 5:
+                    MessageBox.Show("Quinta");
+                    break;
+                case 6:
+                    MessageBox.Show("Sexta");
+                    break;
+
+                case 7:
+                    MessageBox.Show("Sábado");
+                    break;
+                default:
+                    MessageBox.Show("Dia não reconhecido!");
+                    break;
+            }
+
+            // utilizando condicinal if para fazer a mesma coisa 
+            if(iDia ==1)
+            {
+                MessageBox.Show("Domingo");
+            }
+            else if (iDia == 2)
+            {
+                MessageBox.Show("Segunda");
+            }
+            else if (iDia == 3)
+            {
+                MessageBox.Show("Terça");
+            }
+            else if (iDia == 4)
+            {
+                MessageBox.Show("Quarta");
+            }
+            else if (iDia == 5)
+            {
+                MessageBox.Show("Quinta");
+            }
+            else if (iDia == 6)
+            {
+                MessageBox.Show("Sexta");
+            }
+            else if (iDia == 7)
+            {
+                MessageBox.Show("Sábado");
+            }
+            
         }
     }
 }

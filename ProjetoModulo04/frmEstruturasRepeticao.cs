@@ -107,6 +107,67 @@ namespace ProjetoModulo04
                 comboBox1.Items.Add(i.ToString());
                 i++;
             } while (i <= 100);
+
+            //Trabalhando com vetor
+
+            int[] vetor;
+
+            // Trabalhando com Matrizes
+            int[,] matriz;
+            matriz = new int[3,2];
+            matriz[0, 0] = 10;
+            matriz[0, 1] = 20;
+            matriz[1, 0] = 30;
+            matriz[1, 1] = 40;
+            matriz[2, 0] = 50;
+            matriz[2, 1] = 60;
+            int soma1 = 0;
+
+            matriz = new int[,] { { 10, 10, 10 }, { 24, 26, 60 } }; 
+
+            for ( int linha = 0; linha<2; linha++)
+            {
+                for (int coluna = 0; coluna <3; linha++)
+                {
+                    soma = soma + matriz[linha, coluna];
+                }
+            }
+
+
+
+            int iPrimeiroValor;
+            int index;
+            int soma = 0;
+           /* vetor = new int[10];
+            vetor[0] = 20;
+            vetor[1] = 50;
+            vetor[2] = 59;
+            */
+            iPrimeiroValor = vetor[0];
+            vetor = new int[] { 10, 20, 30, 40, 50, 60, 70 };
+
+
+            for (index = 0; index < vetor.Length; index++)
+            {
+                soma = soma + vetor[index];
+            }
+            index = 0;
+
+            while (index < vetor.Length)
+            {
+                soma = soma + vetor[index];
+                index++;
+            }
+            index = 0;
+            do
+            {
+                soma = soma + vetor[index];
+                index++;
+            }
+            while (index < vetor.Length);
+         
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
